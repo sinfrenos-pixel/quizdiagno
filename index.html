@@ -6,128 +6,122 @@
 <title>¿Cuál es el costo invisible de postergar?</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--bg:#F7F2EA;--surface:#FFFFFF;--ink:#292F2D;--title:#31565A;--muted:rgba(41,47,45,.72);--accent:#C98268;--sand:#E5D9C9;--btn:#C98268;--btn-ink:#FFFFFF;--line:#E5D9C9;
+:root{color-scheme:light;--bg:#F7F2EA;--surface:#FFFFFF;--ink:#292F2D;--title:#31565A;--muted:rgba(41,47,45,.7);--accent:#C98268;--sand:#E5D9C9;--btn:#718777;--line:#E5D9C9;
+--serif:"Playfair Display",Georgia,"Times New Roman",serif;--sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+--sq:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 12'%3E%3Cpath d='M2 7c11-6 19 4 32-1s21-4 32 0 22 4 34-1 20-3 32 1' fill='none' stroke='%23C98268' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
+--chk:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath d='M4 15c3 2 5 5 7 9C14 14 20 7 27 2' fill='none' stroke='%23C98268' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-
-
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.7 "Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background-color:var(--bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .18 0 0 0 0 .17 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");color:var(--ink);font:400 1rem/1.75 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--accent);color:#fff}
 [hidden]{display:none!important}
-.wrap{max-width:38rem;margin:0 auto;padding:2.5rem 1.4rem 4rem}
-h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif;color:var(--title);font-weight:600;line-height:1.15;margin:0;letter-spacing:-.01em}
-h1{font-size:clamp(2.2rem,8vw,3.4rem);font-weight:700;margin-bottom:2rem}
-h2{font-size:clamp(1.6rem,5.4vw,2.2rem)}
-h3{font-size:1.55rem;margin-bottom:.8rem}
+.wrap{max-width:35rem;margin:0 auto;padding:3rem 1.5rem 5rem}
+h1,h2,h3{font-family:var(--serif);color:var(--title);font-weight:500;line-height:1.14;margin:0}
+h1{font-size:clamp(2.3rem,8.5vw,3.5rem);font-weight:700;letter-spacing:-.015em}
+h2{font-size:clamp(1.65rem,5.5vw,2.2rem)}
+h3{font-size:1.6rem;margin-bottom:.8rem}
 h1:focus,h2:focus{outline:none}
-p{margin:0 0 1rem}
-.lead{font-family:"Playfair Display",Georgia,serif;color:var(--title);font-weight:500;font-size:clamp(1.25rem,4.4vw,1.65rem);line-height:1.35;margin:0 0 .35rem}
-.muted{color:var(--muted)}
-.small{font-size:.92rem}
-.btn{display:inline-block;background:var(--btn);color:var(--btn-ink);border:0;border-radius:999px;padding:.95rem 1.7rem;font:600 1rem/1.2 "Poppins",system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn:active{transform:translateY(0)}
-.link{background:none;border:0;padding:.4rem 0;color:var(--muted);font:inherit;font-size:.95rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
-.meta{margin:2rem 0 1.2rem;color:var(--muted);font-size:.95rem}
-/* preguntas */
-.segs{display:flex;gap:.4rem;margin-bottom:2.2rem}
-.segs i{flex:1;height:5px;border-radius:3px;background:var(--line);transition:background .3s}
-.segs i.done{background:var(--title)}
-.segs i.cur{background:var(--accent)}
-#qtext{margin:.3rem 0 .8rem;min-height:5.4em}
-.opts{display:grid;gap:.7rem;margin:1.6rem 0 1.6rem}
-.opt{display:flex;align-items:center;gap:.9rem;width:100%;text-align:left;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:14px;padding:1rem 1.1rem;font:500 .98rem/1.35 "Poppins",system-ui,sans-serif;cursor:pointer;transition:border-color .15s,background .15s}
-.opt::before{content:"";flex:none;width:1.15rem;height:1.15rem;border-radius:50%;border:2px solid var(--muted);transition:all .15s}
-.opt:hover{border-color:var(--btn)}
-.opt.sel{border-color:var(--title)}
-.opt.sel::before{background:var(--accent);border-color:var(--accent);box-shadow:inset 0 0 0 3px var(--surface)}
-/* resultado */
-.score{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:1.1rem;color:var(--muted);margin:0 0 .4rem}
-.score b{font-weight:700;font-size:clamp(3.2rem,13vw,4.8rem);color:var(--title);line-height:1}
-.scale{margin:2.4rem 0 1rem}
-.track{position:relative;display:flex;height:12px;border-radius:6px;overflow:hidden}
-.track span{background:var(--accent)}
-.pos{position:relative;height:2.2rem;margin-bottom:.35rem}
-.mark{position:absolute;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}
-.mark::after{content:"";width:3px;height:1rem;background:var(--title);margin-bottom:-6px;border-radius:2px}
-.mark em{font-style:normal;font:600 .8rem/1 "Poppins",sans-serif;background:var(--title);color:#fff;border-radius:999px;padding:.25rem .55rem;margin-bottom:2px}
-.zones{display:flex;font-size:.82rem;color:var(--muted);margin-top:.5rem}
-.refl{border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1.1rem;margin:2rem 0}
-.refl .lead{margin:0}
-.refl .k{font-size:.95rem;color:var(--muted);margin-bottom:.3rem}
-hr{border:0;border-top:1px solid var(--line);margin:3rem 0}
-ul{margin:0 0 1.2rem;padding-left:1.2rem}
-li{margin:.25rem 0}
-.final p{font-family:"Playfair Display",Georgia,serif;color:var(--title);font-weight:500;font-size:1.3rem;line-height:1.4;margin-bottom:.8rem}
-.final p.sm{font-family:"Poppins",system-ui,sans-serif;color:var(--ink);font-weight:400;font-size:1rem;line-height:1.7}
-.cta{background:var(--sand);border-radius:20px;padding:1.8rem 1.5rem;margin-top:3rem}
-.cta .btn{margin-top:.6rem}
-.ico{display:block;width:56px;height:56px;margin-bottom:1.3rem}
+p{margin:0 0 1.1rem}
+em{font-family:var(--serif)}
+:focus-visible{outline:2px solid var(--title);outline-offset:4px}
+.lead{font-family:var(--serif);font-style:italic;color:var(--title);font-size:clamp(1.4rem,4.8vw,1.8rem);line-height:1.3;margin:0 0 1.2rem}
+.squig{height:12px;width:150px;margin:1.4rem auto 2.2rem;background:var(--sq) center/contain no-repeat}
+hr{border:0;height:12px;margin:3.2rem 0;background:var(--sq) left center/150px 12px no-repeat}
+.btn{display:inline-block;background:var(--btn);color:#fff;border:0;border-radius:2px;padding:1rem 2rem;font:600 1rem/1.2 var(--sans);text-decoration:none;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--title)}
+.link{background:none;border:0;padding:.4rem 0;color:var(--muted);font:inherit;font-size:.92rem;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;cursor:pointer}
+.meta{margin:1.1rem 0 0;font-size:.88rem;color:var(--muted)}
+/* intro */
 #intro{text-align:center}
-#intro #proj{text-align:center}
-#intro .ico{margin-left:auto;margin-right:auto}
-.field{display:block;margin:1.8rem 0 .6rem;font-weight:500;color:var(--title)}
-#proj{display:block;width:100%;margin-bottom:1.3rem;padding:.95rem 1.1rem;border:1.5px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);font:400 1rem/1.3 "Poppins",system-ui,sans-serif}
-#proj:focus{border-color:var(--title)}
+#intro p{max-width:30rem;margin-left:auto;margin-right:auto}
+.field{display:block;margin:2.4rem 0 .5rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--title)}
+.field span{color:var(--muted);font-size:.95rem}
+#proj{display:block;width:100%;margin:0 0 1.8rem;padding:.8rem 0;border:0;border-bottom:1.5px solid var(--title);border-radius:0;background:transparent;color:var(--ink);font:400 1rem/1.3 var(--sans);text-align:center}
 #proj::placeholder{color:var(--muted)}
-.chip{display:inline-block;max-width:100%;margin:0 0 1.1rem;padding:.3rem .9rem;border-radius:999px;background:var(--sand);color:var(--title);font-size:.85rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom}
-#calc{padding-top:20vh}
-@media (prefers-reduced-motion:no-preference){.pulse{animation:pulse 1.4s ease-in-out infinite}@keyframes pulse{50%{opacity:.3}}}
+/* preguntas */
+.top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.9rem;color:var(--muted);margin-bottom:.7rem}
+.top em{font-size:1rem}
+.line{height:2px;background:var(--line);margin-bottom:2.2rem}
+.line i{display:block;height:100%;background:var(--accent);transition:width .4s}
+.about{font-size:.95rem;color:var(--muted);margin:0 0 .6rem}
+.about em{color:var(--title);border-bottom:1.5px solid var(--accent)}
+#qtext{min-height:4.6em;margin:0 0 .6rem}
+.hint{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin:0}
+.opts{margin:1.6rem 0 1.4rem;border-top:1px solid var(--line)}
+.opt{display:flex;align-items:center;gap:1rem;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:1.05rem .2rem;color:var(--ink);font:400 1.02rem/1.3 var(--sans);cursor:pointer;transition:padding .2s}
+.opt:hover{padding-left:.7rem}
+.box{position:relative;flex:none;width:1.25rem;height:1.25rem;border:1.5px solid var(--title);border-radius:2px}
+.opt.sel{color:var(--title);font-weight:500}
+.opt.sel .box::after{content:"";position:absolute;left:-.1rem;top:-.55rem;width:1.7rem;height:1.7rem;background:var(--chk) center/contain no-repeat}
+/* calculando */
+#calc{padding-top:22vh;text-align:center}
+.dots::after{content:"";animation:dots 1.2s steps(1) infinite}
+@keyframes dots{0%{content:""}25%{content:"."}50%{content:".."}75%{content:"..."}}
+/* resultado */
+.k{font-size:.85rem;color:var(--muted);margin:0 0 .3rem}
+.score{display:flex;align-items:baseline;gap:.6rem;margin:0 0 1.2rem;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.2rem}
+.score b{font-style:normal;font-weight:700;font-size:clamp(4rem,16vw,5.6rem);line-height:.9;color:var(--title)}
+.pull{margin:2.2rem 0 0;padding:1.5rem 1.6rem;background:var(--surface);border:1px solid var(--line);transform:rotate(-.6deg)}
+.pull p{margin:0}
+.pull .q{font-family:var(--serif);font-style:italic;font-size:1.4rem;line-height:1.35;color:var(--title)}
+.scale{margin:3rem 0 0}
+.ruler{position:relative;height:16px;border-bottom:2px solid var(--title);background:repeating-linear-gradient(90deg,var(--title) 0 1.5px,transparent 1.5px 4.545%) bottom/100% 9px no-repeat}
+.ring{position:absolute;top:50%;width:26px;height:26px;border:2.5px solid var(--accent);border-radius:52% 48% 55% 45%/48% 54% 46% 52%;transform:translate(-50%,-50%) rotate(-8deg)}
+.zones{display:flex;margin-top:.7rem;font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--muted)}
+ul{list-style:none;margin:0 0 1.3rem;padding:0}
+li{position:relative;margin:.3rem 0;padding-left:1.6rem}
+li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weight:600}
+.final p{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.4;color:var(--title);margin-bottom:.9rem}
+.final p.sm{font-family:var(--sans);font-style:normal;font-size:1rem;line-height:1.75;color:var(--ink)}
+.cta{background:var(--sand);padding:2.2rem 1.7rem;margin-top:3.5rem}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <main class="wrap">
 
-<!-- INTRO -->
 <section class="screen" id="intro">
-  <svg class="ico" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="none" stroke="#C98268" stroke-width="3"/><rect x="23" y="20" width="6" height="24" rx="3" fill="#C98268"/><rect x="35" y="20" width="6" height="24" rx="3" fill="#C98268"/></svg>
   <h1 tabindex="-1">¿Cuál es el costo invisible de postergar?</h1>
-  <p class="lead">Antes de comenzar, respira y pensa.</p>
-  
-  <p style="margin-top:1.2rem">Hay algo que querés hacer. Hace meses, quizás años. Lo pensás, lo planeás, te prometés que esta vez sí… pero sigue sin pasar.</p>
-  <p>Y mientras tanto, el tiempo pasa y vos seguís esperando.</p>
-  
-  
-  <p>¿Qué precio estás pagando por seguir postergando eso que tanto querés?</p>
-  <p>Respondé estas preguntas con honestidad. No estás acá para juzgarte, sino para descubrir qué quizás todavía no estás viendo.</p>
-  <label class="field" for="proj">¿Qué sueño estás postergando? <span class="muted">(opcional)</span></label>
-  <input id="proj" maxlength="40" autocomplete="off" placeholder="Ej:abrir mi negocio, cambiar de trabajo, escribir mi libro…">
-  <button class="btn" id="start" type="button">Comenzar cuestionario</button>
-  <p class="meta small" style="margin:1rem 0 0">Solo 7 preguntas · 3 minutos · Sin registrarte</p>
+  <div class="squig" aria-hidden="true"></div>
+  <p class="lead">No es que no sepas qué hacer.</p>
+  <p>Quizás lo pensaste mil veces, lo escribiste en una libreta, investigaste, conversaste con alguien o prometiste que “este año sí”.</p>
+  <p>Y, aun así, sigue esperando.</p>
+  <p>Responde con honestidad. No hay respuestas correctas ni incorrectas.</p>
+  <p>Al final, vas a recibir una interpretación de tu resultado y una invitación a observar tu postergación desde otro lugar.</p>
+  <label class="field" for="proj">Antes de empezar, ¿qué es eso que sigues postergando? <span>(opcional)</span></label>
+  <input id="proj" maxlength="40" autocomplete="off" placeholder="Ej.: abrir mi emprendimiento, escribir mi libro…">
+  <button class="btn" id="start" type="button">Descubrir mi resultado</button>
+  <p class="meta">Solo 7 preguntas · 2 minutos · Sin registrarte</p>
 </section>
 
-<!-- PREGUNTAS -->
 <section class="screen" id="quiz" hidden>
-  <div class="segs" id="segs" aria-hidden="true"></div>
-  <p class="chip" id="chip" hidden></p>
-  <p class="muted small" id="qlabel" style="margin:0"></p>
+  <div class="top"><span id="qlabel"></span><em id="qmsg"></em></div>
+  <div class="line" aria-hidden="true"><i id="bar"></i></div>
+  <p class="about" id="ab1" hidden>Pensando en <em id="ab1n"></em></p>
   <h2 id="qtext" tabindex="-1" aria-live="polite"></h2>
-  <p class="muted small" id="qhint" style="margin:0"></p>
+  <p class="hint" id="qhint"></p>
   <div class="opts" id="opts"></div>
   <button class="link" id="back" type="button"></button>
 </section>
 
 <section class="screen" id="calc" hidden>
-  <svg class="ico pulse" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29" fill="none" stroke="#C98268" stroke-width="3"/><rect x="23" y="20" width="6" height="24" rx="3" fill="#C98268"/><rect x="35" y="20" width="6" height="24" rx="3" fill="#C98268"/></svg>
-  <h2 id="calch" tabindex="-1">Leyendo tus respuestas…</h2>
-  <p class="muted" style="margin-top:.8rem">Estamos preparando tu interpretación personal.</p>
+  <h2 id="calch" tabindex="-1">Leyendo tus respuestas<span class="dots"></span></h2>
+  <p class="hint" style="margin-top:1rem">Estamos preparando tu interpretación personal.</p>
 </section>
 
-<!-- RESULTADO -->
 <section class="screen" id="res" hidden>
-  <p class="chip" id="rchip" hidden></p>
-  <p class="score">Tu puntaje: <b id="score"></b> de 28</p>
+  <p class="about" id="ab2" hidden>Tu resultado sobre <em id="ab2n"></em></p>
+  <p class="k">Tu puntaje</p>
+  <p class="score"><b id="score"></b> de 28</p>
   <h2 id="lvname" tabindex="-1"></h2>
   <div id="lvtext" style="margin-top:1.2rem"></div>
-  <div class="refl"><p class="k">Pregunta para reflexionar</p><p class="lead" id="lvq"></p></div>
+  <div class="pull"><p class="k">Pregunta para reflexionar</p><p class="q" id="lvq"></p></div>
 
   <div class="scale" aria-hidden="true">
-    <div class="pos"><div class="mark" id="mark"><em id="markn"></em></div></div>
-    <div class="track"><span style="width:27.3%;opacity:.3"></span><span style="width:31.8%;opacity:.6"></span><span style="width:40.9%"></span></div>
+    <div class="ruler"><i class="ring" id="mark"></i></div>
     <div class="zones"><span style="width:27.3%">7–12</span><span style="width:31.8%">13–19</span><span style="width:40.9%">20–28</span></div>
   </div>
 
@@ -158,13 +152,12 @@ li{margin:.25rem 0}
     <p>Es la confianza que se desgasta cuando vuelves a prometerte algo y no lo cumplís.</p>
     <p>Es la parte de ti que queda esperando.</p>
     <p>Es la vida que sabes que querés vivir, pero que sigue en pausa.</p>
-    <p class="sm" style="margin-top:1.4rem">La buena noticia es que no necesitas volverte otra persona para avanzar. Necesitas aprender a observarte de una manera diferente.</p>
+    <p class="sm" style="margin-top:1.6rem">La buena noticia es que no necesitas volverte otra persona para avanzar. Necesitas aprender a observarte de una manera diferente.</p>
   </div>
 
   <div class="cta">
     <h3>¿Querés entender qué te frena realmente?</h3>
     <p>Reservá una Sesión de Claridad para explorar tu proyecto postergado, identificar el patrón que aparece detrás de tu postergación y evaluar si el programa de 10 semanas es adecuado para tu momento.</p>
-    <!-- REEMPLAZAR href="#" por el link de agenda de la Sesión de Claridad -->
     <a class="btn" id="cta" href="https://calendly.com/reserva-sesiones-coaching/meet" target="_blank" rel="noopener">Quiero reservar mi Sesión de Claridad</a>
   </div>
 
@@ -174,7 +167,7 @@ li{margin:.25rem 0}
 </main>
 <script>
 const Q=[
-"¿Con qué frecuencia pensás en tu proyecto, pero sentís que todavía no estás lista?",
+"¿Con qué frecuencia piensas en tu proyecto sin dar un paso concreto hacia él?",
 "¿Cuánto te afecta emocionalmente pensar que sigue postergado?",
 "¿Con qué frecuencia sientes culpa, frustración o bronca contigo misma por no haber avanzado antes?",
 "¿Cuántas veces pospones empezar porque sientes que todavía no estás lista, no tienes todo claro o faltan condiciones ideales?",
@@ -182,7 +175,7 @@ const Q=[
 "¿Cuánto te preocupa lo que pensarán, dirán o verán los demás si finalmente te muestras y lo intentas?",
 "¿Con qué frecuencia sientes que una parte importante de ti quedó en pausa mientras tu proyecto sigue siendo solo una idea?"];
 const O=["Casi nunca","A veces","Frecuentemente","Casi siempre"];
-const P=["Sin apuro","Vas bien","Ya avanzaste","¡Ya pasaste la mitad!","Falta poco","Casi llegas","Tu resultado viene después de esta"];
+const P=["sin apuro","vas bien","ya avanzaste","¡ya pasaste la mitad!","falta poco","casi llegas","tu resultado viene después de esta"];
 const H=["Elige la opción que mejor describa tu momento actual. Aquí no hay respuestas correctas.","Notar lo que sientes es parte del proceso, no una debilidad.","La culpa suele aparecer porque ese proyecto sí importa.","Esperar el momento perfecto es una de las formas más comunes de postergar.","Prepararse se siente productivo; a veces también es una forma de esperar.","El miedo al juicio es humano: casi todas las personas lo sienten al mostrarse.","Responde con lo primero que sientas."];
 const L=[
 {max:12,name:"Postergación puntual",
@@ -196,6 +189,7 @@ const L=[
  q:"¿Qué significaría sobre ti si finalmente lo intentas y no sale como esperabas?"}];
 const $=id=>document.getElementById(id);
 let i=0,ans=[],lock=false,proj='';
+const ab=p=>{$(p).hidden=!proj;$(p+'n').textContent="«"+proj+"»"};
 
 function show(id,focusId){
   document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!==id);
@@ -203,10 +197,13 @@ function show(id,focusId){
   const f=$(focusId);if(f)f.focus({preventScroll:true});
 }
 function renderQ(){
-  $('qlabel').textContent="Pregunta "+(i+1)+" de "+Q.length+" · "+P[i];$('qhint').textContent=H[i];$('chip').hidden=!proj;$('chip').textContent="Pensando en: «"+proj+"»";
+  $('qlabel').textContent=(i+1)+" de "+Q.length;
+  $('qmsg').textContent=P[i];
+  $('bar').style.width=((i+1)/Q.length*100)+'%';
+  ab('ab1');
   $('qtext').textContent=Q[i];
-  $('segs').innerHTML=Q.map((_,k)=>'<i class="'+(k<i?'done':k===i?'cur':'')+'"></i>').join('');
-  $('opts').innerHTML=O.map((t,k)=>'<button type="button" class="opt'+(ans[i]===k+1?' sel':'')+'" data-v="'+(k+1)+'">'+t+'</button>').join('');
+  $('qhint').textContent=H[i];
+  $('opts').innerHTML=O.map((t,k)=>'<button type="button" class="opt'+(ans[i]===k+1?' sel':'')+'" data-v="'+(k+1)+'"><span class="box"></span><span>'+t+'</span></button>').join('');
   $('back').textContent=i?'Volver a la pregunta anterior':'Volver al inicio';
 }
 function result(){
@@ -215,9 +212,10 @@ function result(){
   $('lvname').textContent=lv.name;
   $('lvtext').innerHTML=lv.p.map(t=>'<p>'+t+'</p>').join('');
   $('lvq').textContent=lv.q;
-  $('markn').textContent=s;$('rchip').hidden=!proj;$('rchip').textContent="Tu resultado sobre: «"+proj+"»";
+  ab('ab2');
   $('mark').style.left=((s-7+.5)/22*100)+'%';
-  show('calc','calch');setTimeout(()=>show('res','lvname'),1800);
+  show('calc','calch');
+  setTimeout(()=>show('res','lvname'),1800);
 }
 $('start').onclick=()=>{i=0;ans=[];proj=$('proj').value.trim();renderQ();show('quiz','qtext')};
 $('proj').addEventListener('keydown',e=>{if(e.key==='Enter')$('start').click()});
@@ -226,9 +224,9 @@ $('opts').addEventListener('click',e=>{
   const b=e.target.closest('.opt');if(!b||lock)return;
   lock=true;ans[i]=+b.dataset.v;
   $('opts').querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===b));
-  setTimeout(()=>{lock=false;if(i<Q.length-1){i++;renderQ();$('qtext').focus({preventScroll:true})}else result()},320);
+  setTimeout(()=>{lock=false;if(i<Q.length-1){i++;renderQ();$('qtext').focus({preventScroll:true})}else result()},340);
 });
-$('back').onclick=()=>{if(i){i--;renderQ();$('qtext').focus({preventScroll:true})}else show('intro','intro')?0:0;};
+$('back').onclick=()=>{if(i){i--;renderQ();$('qtext').focus({preventScroll:true})}else show('intro')};
 $('again').onclick=()=>{i=0;ans=[];show('intro')};
 </script>
 </body>
