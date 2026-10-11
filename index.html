@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>¿Cuál es el costo invisible de postergar?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#F7F2EA;--surface:#FFFFFF;--ink:#292F2D;--title:#31565A;--muted:rgba(41,47,45,.72);--accent:#C98268;--sand:#E5D9C9;--btn:#718777;--btn-ink:#FFFFFF;--line:#E5D9C9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+
+
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.7 "Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+[hidden]{display:none!important}
+.wrap{max-width:38rem;margin:0 auto;padding:2.5rem 1.4rem 4rem}
+h1,h2,h3{font-family:"Playfair Display",Georgia,"Times New Roman",serif;color:var(--title);font-weight:600;line-height:1.15;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,8vw,3.4rem);font-weight:700;margin-bottom:2rem}
+h2{font-size:clamp(1.6rem,5.4vw,2.2rem)}
+h3{font-size:1.55rem;margin-bottom:.8rem}
+h1:focus,h2:focus{outline:none}
+p{margin:0 0 1rem}
+.lead{font-family:"Playfair Display",Georgia,serif;color:var(--title);font-weight:500;font-size:clamp(1.25rem,4.4vw,1.65rem);line-height:1.35;margin:0 0 .35rem}
+.muted{color:var(--muted)}
+.small{font-size:.92rem}
+.btn{display:inline-block;background:var(--btn);color:var(--btn-ink);border:0;border-radius:999px;padding:.95rem 1.7rem;font:600 1rem/1.2 "Poppins",system-ui,sans-serif;text-decoration:none;cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn:active{transform:translateY(0)}
+.link{background:none;border:0;padding:.4rem 0;color:var(--muted);font:inherit;font-size:.95rem;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.meta{margin:2rem 0 1.2rem;color:var(--muted);font-size:.95rem}
+/* preguntas */
+.segs{display:flex;gap:.4rem;margin-bottom:2.2rem}
+.segs i{flex:1;height:5px;border-radius:3px;background:var(--line);transition:background .3s}
+.segs i.done{background:var(--title)}
+.segs i.cur{background:var(--accent)}
+#qtext{margin:.3rem 0 .8rem;min-height:5.4em}
+.opts{display:grid;gap:.7rem;margin:1.6rem 0 1.6rem}
+.opt{display:flex;align-items:center;gap:.9rem;width:100%;text-align:left;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);border-radius:14px;padding:1rem 1.1rem;font:500 .98rem/1.35 "Poppins",system-ui,sans-serif;cursor:pointer;transition:border-color .15s,background .15s}
+.opt::before{content:"";flex:none;width:1.15rem;height:1.15rem;border-radius:50%;border:2px solid var(--muted);transition:all .15s}
+.opt:hover{border-color:var(--btn)}
+.opt.sel{border-color:var(--title)}
+.opt.sel::before{background:var(--accent);border-color:var(--accent);box-shadow:inset 0 0 0 3px var(--surface)}
+/* resultado */
+.score{font-family:"Playfair Display",Georgia,serif;font-weight:500;font-size:1.1rem;color:var(--muted);margin:0 0 .4rem}
+.score b{font-weight:700;font-size:clamp(3.2rem,13vw,4.8rem);color:var(--title);line-height:1}
+.scale{margin:2.4rem 0 1rem}
+.track{position:relative;display:flex;height:12px;border-radius:6px;overflow:hidden}
+.track span{background:var(--accent)}
+.pos{position:relative;height:2.2rem;margin-bottom:.35rem}
+.mark{position:absolute;bottom:0;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center}
+.mark::after{content:"";width:3px;height:1rem;background:var(--title);margin-bottom:-6px;border-radius:2px}
+.mark em{font-style:normal;font:600 .8rem/1 "Poppins",sans-serif;background:var(--title);color:#fff;border-radius:999px;padding:.25rem .55rem;margin-bottom:2px}
+.zones{display:flex;font-size:.82rem;color:var(--muted);margin-top:.5rem}
+.refl{border-left:3px solid var(--accent);padding:.2rem 0 .2rem 1.1rem;margin:2rem 0}
+.refl .lead{margin:0}
+.refl .k{font-size:.95rem;color:var(--muted);margin-bottom:.3rem}
+hr{border:0;border-top:1px solid var(--line);margin:3rem 0}
+ul{margin:0 0 1.2rem;padding-left:1.2rem}
+li{margin:.25rem 0}
+.final p{font-family:"Playfair Display",Georgia,serif;color:var(--title);font-weight:500;font-size:1.3rem;line-height:1.4;margin-bottom:.8rem}
+.final p.sm{font-family:"Poppins",system-ui,sans-serif;color:var(--ink);font-weight:400;font-size:1rem;line-height:1.7}
+.cta{background:var(--sand);border-radius:20px;padding:1.8rem 1.5rem;margin-top:3rem}
+.cta .btn{margin-top:.6rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<!-- INTRO -->
+<section class="screen" id="intro">
+  <h1 tabindex="-1">¿Cuál es el costo invisible de postergar?</h1>
+  <p class="lead">No es que no sepas qué hacer.</p>
+  
+  <p style="margin-top:1.2rem">Quizás lo pensaste mil veces, lo escribiste en una libreta, investigaste, conversaste con alguien o prometiste que “este año sí”.</p>
+  <p>Y, aun así, sigue esperando.</p>
+  
+  
+  <p>Responde con honestidad. No hay respuestas correctas ni incorrectas.</p>
+  <p>Al final, vas a recibir una interpretación de tu resultado y una invitación a observar tu postergación desde otro lugar.</p>
+  <p class="meta">7 preguntas · Menos de 3 minutos</p>
+  <button class="btn" id="start" type="button">Empezar el cuestionario</button>
+</section>
+
+<!-- PREGUNTAS -->
+<section class="screen" id="quiz" hidden>
+  <div class="segs" id="segs" aria-hidden="true"></div>
+  <p class="muted small" id="qlabel" style="margin:0"></p>
+  <h2 id="qtext" tabindex="-1" aria-live="polite"></h2>
+  <p class="muted small" style="margin:0">Elige la opción que mejor describa tu situación actual.</p>
+  <div class="opts" id="opts"></div>
+  <button class="link" id="back" type="button"></button>
+</section>
+
+<!-- RESULTADO -->
+<section class="screen" id="res" hidden>
+  <p class="score">Tu puntaje: <b id="score"></b> de 28</p>
+  <h2 id="lvname" tabindex="-1"></h2>
+  <div id="lvtext" style="margin-top:1.2rem"></div>
+  <div class="refl"><p class="k">Pregunta para reflexionar</p><p class="lead" id="lvq"></p></div>
+
+  <div class="scale" aria-hidden="true">
+    <div class="pos"><div class="mark" id="mark"><em id="markn"></em></div></div>
+    <div class="track"><span style="width:27.3%;opacity:.3"></span><span style="width:31.8%;opacity:.6"></span><span style="width:40.9%"></span></div>
+    <div class="zones"><span style="width:27.3%">7–12</span><span style="width:31.8%">13–19</span><span style="width:40.9%">20–28</span></div>
+  </div>
+
+  <hr>
+  <h3>Una mirada más profunda</h3>
+  <p>El objetivo no es que concluyas: “soy una mujer que posterga”. El objetivo es que observes algo más preciso:</p>
+  <ul>
+    <li>No siempre postergas por pereza.</li>
+    <li>No siempre necesitas más información.</li>
+    <li>No siempre falta tiempo.</li>
+    <li>No siempre es falta de disciplina.</li>
+  </ul>
+  <p>A veces postergar es una forma de protegerte:</p>
+  <ul>
+    <li>Del fracaso.</li>
+    <li>Del juicio.</li>
+    <li>De equivocarte.</li>
+    <li>De descubrir que no eres capaz.</li>
+    <li>De exponerte.</li>
+    <li>De perder una versión idealizada del proyecto.</li>
+  </ul>
+  <p>Por eso saber qué hacer no siempre alcanza.</p>
+
+  <hr>
+  <div class="final">
+    <p>El costo invisible de postergar no es solo el tiempo que pasa.</p>
+    <p>Es la energía que gastas pensando en lo mismo.</p>
+    <p>Es la confianza que se desgasta cuando vuelves a prometerte algo y no lo cumplís.</p>
+    <p>Es la parte de ti que queda esperando.</p>
+    <p>Es la vida que sabes que querés vivir, pero que sigue en pausa.</p>
+    <p class="sm" style="margin-top:1.4rem">La buena noticia es que no necesitas volverte otra persona para avanzar. Necesitas aprender a observarte de una manera diferente.</p>
+  </div>
+
+  <div class="cta">
+    <h3>¿Querés entender qué te frena realmente?</h3>
+    <p>Reservá una Sesión de Claridad para explorar tu proyecto postergado, identificar el patrón que aparece detrás de tu postergación y evaluar si el programa de 10 semanas es adecuado para tu momento.</p>
+    <!-- REEMPLAZAR href="#" por el link de agenda de la Sesión de Claridad -->
+    <a class="btn" id="cta" href="https://calendly.com/reserva-sesiones-coaching/meet" target="_blank" rel="noopener">Quiero reservar mi Sesión de Claridad</a>
+  </div>
+
+  <p style="margin-top:2rem"><button class="link" id="again" type="button">Volver a hacer el cuestionario</button></p>
+</section>
+
+</main>
+<script>
+const Q=[
+"¿Con qué frecuencia piensas en tu proyecto sin dar un paso concreto hacia él?",
+"¿Cuánto te afecta emocionalmente pensar que sigue postergado?",
+"¿Con qué frecuencia sientes culpa, frustración o bronca contigo misma por no haber avanzado antes?",
+"¿Cuántas veces pospones empezar porque sientes que todavía no estás lista, no tienes todo claro o faltan condiciones ideales?",
+"¿Con qué frecuencia buscas más información, cursos, consejos o “preparación” antes de actuar?",
+"¿Cuánto te preocupa lo que pensarán, dirán o verán los demás si finalmente te muestras y lo intentas?",
+"¿Con qué frecuencia sientes que una parte importante de ti quedó en pausa mientras tu proyecto sigue siendo solo una idea?"];
+const O=["Casi nunca","A veces","Frecuentemente","Casi siempre"];
+const L=[
+{max:12,name:"Postergación puntual",
+ p:["Tu proyecto puede estar en una etapa de espera, pero todavía no parece estar generando un costo emocional profundo.","Puede que necesites claridad sobre el siguiente paso, una estructura más concreta o una decisión que lleves tiempo evitando."],
+ q:"¿Qué tendría que pasar para que este proyecto deje de ser “algún día” y pase a tener un lugar real en tu vida?"},
+{max:19,name:"Postergación con costo emocional",
+ p:["Ya no es solo una idea pendiente: empieza a afectar cómo te ves y cómo te sientes.","Probablemente alternas entre entusiasmo, culpa, sobrepensamiento y autocrítica. Puede que sientas que sabes qué hacer, pero algo interno te devuelve una y otra vez al mismo punto."],
+ q:"¿Qué creencia sobre ti misma aparece justo antes de postergar?"},
+{max:28,name:"El costo invisible es alto",
+ p:["Tu postergación ya no es solo una cuestión de tiempo o productividad. Está impactando tu confianza, tu energía emocional, tu sentido de posibilidad y quizás la manera en que te reconoces a ti misma.","No es que no seas capaz.","Es probable que estés operando desde creencias, estándares, miedos o patrones que convierten cada intento de avanzar en una experiencia exigente, expuesta o insegura."],
+ q:"¿Qué significaría sobre ti si finalmente lo intentas y no sale como esperabas?"}];
+const $=id=>document.getElementById(id);
+let i=0,ans=[],lock=false;
+
+function show(id,focusId){
+  document.querySelectorAll('.screen').forEach(s=>s.hidden=s.id!==id);
+  window.scrollTo(0,0);
+  const f=$(focusId);if(f)f.focus({preventScroll:true});
+}
+function renderQ(){
+  $('qlabel').textContent="Pregunta "+(i+1)+" de "+Q.length;
+  $('qtext').textContent=Q[i];
+  $('segs').innerHTML=Q.map((_,k)=>'<i class="'+(k<i?'done':k===i?'cur':'')+'"></i>').join('');
+  $('opts').innerHTML=O.map((t,k)=>'<button type="button" class="opt'+(ans[i]===k+1?' sel':'')+'" data-v="'+(k+1)+'">'+t+'</button>').join('');
+  $('back').textContent=i?'Volver a la pregunta anterior':'Volver al inicio';
+}
+function result(){
+  const s=ans.reduce((a,b)=>a+b,0),lv=L.find(l=>s<=l.max);
+  $('score').textContent=s;
+  $('lvname').textContent=lv.name;
+  $('lvtext').innerHTML=lv.p.map(t=>'<p>'+t+'</p>').join('');
+  $('lvq').textContent=lv.q;
+  $('markn').textContent=s;
+  $('mark').style.left=((s-7+.5)/22*100)+'%';
+  show('res','lvname');
+}
+$('start').onclick=()=>{i=0;ans=[];renderQ();show('quiz','qtext')};
+$('opts').addEventListener('click',e=>{
+  const b=e.target.closest('.opt');if(!b||lock)return;
+  lock=true;ans[i]=+b.dataset.v;
+  $('opts').querySelectorAll('.opt').forEach(x=>x.classList.toggle('sel',x===b));
+  setTimeout(()=>{lock=false;if(i<Q.length-1){i++;renderQ();$('qtext').focus({preventScroll:true})}else result()},320);
+});
+$('back').onclick=()=>{if(i){i--;renderQ();$('qtext').focus({preventScroll:true})}else show('intro','intro')?0:0;};
+$('again').onclick=()=>{i=0;ans=[];show('intro')};
+</script>
+</body>
+</html>
