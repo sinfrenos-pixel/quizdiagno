@@ -79,8 +79,14 @@ li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weigh
 .final p{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.4;color:var(--ink);margin-bottom:.9rem}
 
 .final p.sm{font-family:var(--sans);font-style:normal;font-size:1rem;line-height:1.75;color:var(--ink)}
-.cta{border:2px solid var(--ink);padding:2.4rem 1.7rem;margin-top:3.5rem}
-.cta h3{color:var(--ink)}
+.cta{background:var(--ink);color:var(--bg);text-align:center;padding:3rem 1.8rem 3.2rem;margin-top:3.5rem}
+.cta .squig{margin:0 auto 1.6rem}
+.cta h3{color:var(--bg);font-size:clamp(1.8rem,6.4vw,2.5rem);line-height:1.15;margin-bottom:1.1rem}
+.cta h3 em{color:var(--accent);font-style:italic}
+.cta p{max-width:28rem;margin:0 auto 2rem;color:rgba(243,241,235,.88)}
+.cta .btn{background:var(--accent);color:var(--ink);padding:1.15rem 2.2rem;font-size:1.1rem;box-shadow:5px 5px 0 var(--bg);animation:nudge 2.6s ease-in-out infinite}
+.cta .btn:hover{background:var(--bg);color:var(--ink);animation-play-state:paused}
+@keyframes nudge{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
 
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
@@ -162,7 +168,8 @@ li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weigh
   </div>
 
   <div class="cta">
-    <h3>¿Querés entender qué te frena realmente?</h3>
+    <div class="squig" aria-hidden="true"></div>
+    <h3>¿Querés entender <em>qué te frena</em> realmente?</h3>
     <p>Reservá una Sesión de Claridad Gratuita para identificar el patrón y las creencias que aparecen detrás de postergar y procastinar.</p>
     <a class="btn" id="cta" href="https://calendly.com/reserva-sesiones-coaching/meet" target="_blank" rel="noopener">Reservar mi Sesión de Claridad Gratuita </a>
   </div>
