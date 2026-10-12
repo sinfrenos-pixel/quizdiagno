@@ -8,15 +8,15 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:light;--bg:#F3F1EB;--surface:#FFFFFF;--ink:#292F2D;--title:#151517;--muted:rgba(41,47,45,.7);--accent:#FF7A1A;--sand:#E5D9C9;--btn:#FF7A1A;--line:#E5D9C9;
+:root{color-scheme:light;--bg:#F3F1EB;--surface:#F3F1EB;--ink:#151517;--title:#151517;--muted:rgba(21,21,23,.68);--accent:#FF7A1A;--blue:#388BFF;--sand:#F3F1EB;--btn:#FF7A1A;--main:#151517;--line:rgba(21,21,23,.16);
 --serif:"Playfair Display",Georgia,"Times New Roman",serif;--sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
 --sq:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 150 12'%3E%3Cpath d='M2 7c11-6 19 4 32-1s21-4 32 0 22 4 34-1 20-3 32 1' fill='none' stroke='%23FF7A1A' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E");
 --chk:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath d='M4 15c3 2 5 5 7 9C14 14 20 7 27 2' fill='none' stroke='%23FF7A1A' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *,*::before,*::after{box-sizing:inherit}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background-color:var(--bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .18 0 0 0 0 .17 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");color:var(--ink);font:400 1rem/1.75 var(--sans);-webkit-font-smoothing:antialiased}
-::selection{background:var(--accent);color:#fff}
+body{margin:0;background-color:var(--bg);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .08 0 0 0 0 .08 0 0 0 0 .09 0 0 0 .12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");color:var(--ink);font:400 1rem/1.75 var(--sans);-webkit-font-smoothing:antialiased}
+::selection{background:var(--blue);color:var(--ink)}
 [hidden]{display:none!important}
 .wrap{max-width:35rem;margin:0 auto;padding:3rem 1.5rem 5rem}
 h1,h2,h3{font-family:var(--serif);color:var(--title);font-weight:500;line-height:1.14;margin:0}
@@ -30,8 +30,8 @@ em{font-family:var(--serif)}
 .lead{font-family:var(--serif);font-style:italic;color:var(--title);font-size:clamp(1.4rem,4.8vw,1.8rem);line-height:1.3;margin:0 0 1.2rem}
 .squig{height:12px;width:150px;margin:1.4rem auto 2.2rem;background:var(--sq) center/contain no-repeat}
 hr{border:0;height:12px;margin:3.2rem 0;background:var(--sq) left center/150px 12px no-repeat}
-.btn{display:inline-block;background:var(--btn);color:#fff;border:0;border-radius:2px;padding:1rem 2rem;font:600 1rem/1.2 var(--sans);text-decoration:none;cursor:pointer;transition:background .2s}
-.btn:hover{background:var(--title)}
+.btn{display:inline-block;background:var(--btn);color:var(--ink);border:0;border-radius:2px;padding:1rem 2rem;font:600 1.05rem/1.2 var(--sans);text-decoration:none;cursor:pointer;transition:background .2s}
+.btn:hover{background:var(--ink);color:var(--bg)}
 .link{background:none;border:0;padding:.4rem 0;color:var(--muted);font:inherit;font-size:.92rem;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:4px;cursor:pointer}
 .meta{margin:1.1rem 0 0;font-size:.88rem;color:var(--muted)}
 /* intro */
@@ -39,7 +39,7 @@ hr{border:0;height:12px;margin:3.2rem 0;background:var(--sq) left center/150px 1
 #intro p{max-width:30rem;margin-left:auto;margin-right:auto}
 .field{display:block;margin:2.4rem 0 .5rem;font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--title)}
 .field span{color:var(--muted);font-size:.95rem}
-#proj{display:block;width:100%;margin:0 0 1.8rem;padding:.8rem 0;border:0;border-bottom:1.5px solid var(--title);border-radius:0;background:transparent;color:var(--ink);font:400 1rem/1.3 var(--sans);text-align:center}
+#proj{display:block;width:100%;margin:0 0 1.8rem;padding:.8rem 0;border:0;border-bottom:1.5px solid var(--main);border-radius:0;background:transparent;color:var(--ink);font:400 1rem/1.3 var(--sans);text-align:center}
 #proj::placeholder{color:var(--muted)}
 /* preguntas */
 .top{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;font-size:.9rem;color:var(--muted);margin-bottom:.7rem}
@@ -47,13 +47,13 @@ hr{border:0;height:12px;margin:3.2rem 0;background:var(--sq) left center/150px 1
 .line{height:2px;background:var(--line);margin-bottom:2.2rem}
 .line i{display:block;height:100%;background:var(--accent);transition:width .4s}
 .about{font-size:.95rem;color:var(--muted);margin:0 0 .6rem}
-.about em{color:var(--title);border-bottom:1.5px solid var(--accent)}
+.about em{color:var(--ink);background:linear-gradient(transparent 55%,var(--blue) 55%)}
 #qtext{min-height:4.6em;margin:0 0 .6rem}
 .hint{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.02rem;margin:0}
 .opts{margin:1.6rem 0 1.4rem;border-top:1px solid var(--line)}
 .opt{display:flex;align-items:center;gap:1rem;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:1.05rem .2rem;color:var(--ink);font:400 1.02rem/1.3 var(--sans);cursor:pointer;transition:padding .2s}
 .opt:hover{padding-left:.7rem}
-.box{position:relative;flex:none;width:1.25rem;height:1.25rem;border:1.5px solid var(--title);border-radius:2px}
+.box{position:relative;flex:none;width:1.25rem;height:1.25rem;border:1.5px solid var(--main);border-radius:2px}
 .opt.sel{color:var(--title);font-weight:500}
 .opt.sel .box::after{content:"";position:absolute;left:-.1rem;top:-.55rem;width:1.7rem;height:1.7rem;background:var(--chk) center/contain no-repeat}
 /* calculando */
@@ -64,19 +64,25 @@ hr{border:0;height:12px;margin:3.2rem 0;background:var(--sq) left center/150px 1
 .k{font-size:.85rem;color:var(--muted);margin:0 0 .3rem}
 .score{display:flex;align-items:baseline;gap:.6rem;margin:0 0 1.2rem;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.2rem}
 .score b{font-style:normal;font-weight:700;font-size:clamp(4rem,16vw,5.6rem);line-height:.9;color:var(--title)}
-.pull{margin:2.2rem 0 0;padding:1.5rem 1.6rem;background:var(--surface);border:1px solid var(--line);transform:rotate(-.6deg)}
+.pull{margin:2.2rem 0 0;padding:1.5rem 1.6rem;background:var(--title);color:var(--bg);transform:rotate(-.6deg)}
 .pull p{margin:0}
-.pull .q{font-family:var(--serif);font-style:italic;font-size:1.4rem;line-height:1.35;color:var(--title)}
+.pull .q{font-family:var(--serif);font-style:italic;font-size:1.4rem;line-height:1.35;color:var(--bg)}
+.pull .k{color:rgba(232,226,212,.78)}
 .scale{margin:3rem 0 0}
-.ruler{position:relative;height:16px;border-bottom:2px solid var(--title);background:repeating-linear-gradient(90deg,var(--title) 0 1.5px,transparent 1.5px 4.545%) bottom/100% 9px no-repeat}
-.ring{position:absolute;top:50%;width:26px;height:26px;border:2.5px solid var(--accent);border-radius:52% 48% 55% 45%/48% 54% 46% 52%;transform:translate(-50%,-50%) rotate(-8deg)}
+.ruler{position:relative;height:16px;border-bottom:2px solid var(--main);background:repeating-linear-gradient(90deg,var(--main) 0 1.5px,transparent 1.5px 4.545%) bottom/100% 9px no-repeat}
+.ring{position:absolute;top:50%;width:26px;height:26px;border:2.5px solid var(--ink);background:var(--blue);border-radius:52% 48% 55% 45%/48% 54% 46% 52%;transform:translate(-50%,-50%) rotate(-8deg)}
 .zones{display:flex;margin-top:.7rem;font-family:var(--serif);font-style:italic;font-size:.92rem;color:var(--muted)}
 ul{list-style:none;margin:0 0 1.3rem;padding:0}
 li{position:relative;margin:.3rem 0;padding-left:1.6rem}
 li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weight:600}
-.final p{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.4;color:var(--title);margin-bottom:.9rem}
+.hl{background:linear-gradient(transparent 58%,var(--accent) 58%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.final p{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.4;color:var(--ink);margin-bottom:.9rem}
+
 .final p.sm{font-family:var(--sans);font-style:normal;font-size:1rem;line-height:1.75;color:var(--ink)}
-.cta{background:var(--sand);padding:2.2rem 1.7rem;margin-top:3.5rem}
+.cta{border:2px solid var(--ink);padding:2.4rem 1.7rem;margin-top:3.5rem}
+.cta h3{color:var(--ink)}
+
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
@@ -86,13 +92,14 @@ li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weigh
 <section class="screen" id="intro">
   <h1 tabindex="-1">¿Cuál es el costo invisible de postergar?</h1>
   <div class="squig" aria-hidden="true"></div>
-  <p class="lead">Antes de comenzar, respira y piensa.</p>
-  <p>Hay algo que querés hacer. Hace meses, quizás años. Lo pensás, lo planeás, te prometés que esta vez sí… pero sigue sin pasar.</p>
-  <p>Y mientras tanto, el tiempo pasa y vos seguís esperando.</p>
-  <p>Respondé estas preguntas con honestidad. No estás acá para juzgarte, sino para descubrir algo qué quizás todavía no estás viendo.</p>
-  <label class="field" for="proj">¿Qué sueño estás postergando? <span>(opcional)</span></label>
-  <input id="proj" maxlength="40" autocomplete="off" placeholder="Ej: Emprender, cambiar de trabajo, escribir mi libro…">
-  <button class="btn" id="start" type="button">Comenzar</button>
+  <p class="lead">No es que no sepas qué hacer.</p>
+  <p>Quizás lo pensaste mil veces, lo escribiste en una libreta, investigaste, conversaste con alguien o prometiste que “este año sí”.</p>
+  <p>Y, aun así, sigue esperando.</p>
+  <p>Responde con honestidad. No hay respuestas correctas ni incorrectas.</p>
+  <p>Al final, vas a recibir una interpretación de tu resultado y una invitación a observar tu postergación desde otro lugar.</p>
+  <label class="field" for="proj">Antes de empezar, ¿qué es eso que sigues postergando? <span>(opcional)</span></label>
+  <input id="proj" maxlength="40" autocomplete="off" placeholder="Ej.: abrir mi emprendimiento, escribir mi libro…">
+  <button class="btn" id="start" type="button">Descubrir mi resultado</button>
   <p class="meta">Solo 7 preguntas · 2 minutos · Sin registrarte</p>
 </section>
 
@@ -107,8 +114,8 @@ li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weigh
 </section>
 
 <section class="screen" id="calc" hidden>
-  <h2 id="calch" tabindex="-1">Analizando tus respuestas<span class="dots"></span></h2>
-  <p class="hint" style="margin-top:1rem">Creando tu espacio de claridad.</p>
+  <h2 id="calch" tabindex="-1">Leyendo tus respuestas<span class="dots"></span></h2>
+  <p class="hint" style="margin-top:1rem">Estamos preparando tu interpretación personal.</p>
 </section>
 
 <section class="screen" id="res" hidden>
@@ -126,7 +133,7 @@ li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weigh
 
   <hr>
   <h3>Una mirada más profunda</h3>
-  <p>El objetivo no es que pienses que: “Sos una mujer que procastina o posterga”. El objetivo es que entiendas que:</p>
+  <p>El objetivo no es que concluyas: “soy una mujer que posterga”. El objetivo es que observes algo más preciso:</p>
   <ul>
     <li>No siempre postergas por pereza.</li>
     <li>No siempre necesitas más información.</li>
@@ -136,10 +143,10 @@ li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weigh
   <p>A veces postergar es una forma de protegerte:</p>
   <ul>
     <li>Del fracaso.</li>
-    <li>Del juicio ajeno.</li>
+    <li>Del juicio.</li>
     <li>De equivocarte.</li>
-    <li>De descubrir que no sos capaz.</li>
-    <li>De exponerte y sentir miedo al exito.</li>
+    <li>De descubrir que no eres capaz.</li>
+    <li>De exponerte.</li>
     <li>De perder una versión idealizada del proyecto.</li>
   </ul>
   <p>Por eso saber qué hacer no siempre alcanza.</p>
@@ -148,16 +155,16 @@ li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weigh
   <div class="final">
     <p>El costo invisible de postergar no es solo el tiempo que pasa.</p>
     <p>Es la energía que gastas pensando en lo mismo.</p>
-    <p>Es la confianza que se desgasta cuando volves a prometerte algo y no lo cumplís.</p>
-    <p>Es la parte de ti que queda esperando.</p>
+    <p>Es la confianza que se desgasta cuando vuelves a prometerte algo y no lo cumplís.</p>
+    <p><span class="hl">Es la parte de ti que queda esperando.</span></p>
     <p>Es la vida que sabes que querés vivir, pero que sigue en pausa.</p>
-    <p class="sm" style="margin-top:1.6rem">La buena noticia es que la vara que construiste para darle sentido a lo que te pasa... podes romperla y construir una nueva. Solo necesitas aprender a mirarte de una manera diferente.</p>
+    <p class="sm" style="margin-top:1.6rem">La buena noticia es que no necesitas volverte otra persona para avanzar. Necesitas aprender a observarte de una manera diferente.</p>
   </div>
 
   <div class="cta">
     <h3>¿Querés entender qué te frena realmente?</h3>
-    <p>Reservá una Sesión de Claridad gratuita para identificar el patrón y las creencias que aparecen detrás de postergar y procastinar. Luego podras evaluar si el programa de 10 semanas es adecuado para vos.</p>
-    <a class="btn" id="cta" href="https://calendly.com/reserva-sesiones-coaching/meet" target="_blank" rel="noopener">Quiero reservar mi Sesión de Claridad Gratuita</a>
+    <p>Reservá una Sesión de Claridad para explorar tu proyecto postergado, identificar el patrón que aparece detrás de tu postergación y evaluar si el programa de 10 semanas es adecuado para tu momento.</p>
+    <a class="btn" id="cta" href="https://calendly.com/reserva-sesiones-coaching/meet" target="_blank" rel="noopener">Quiero reservar mi Sesión de Claridad</a>
   </div>
 
   <p style="margin-top:2rem"><button class="link" id="again" type="button">Volver a hacer el cuestionario</button></p>
@@ -166,26 +173,26 @@ li::before{content:"–";position:absolute;left:0;color:var(--accent);font-weigh
 </main>
 <script>
 const Q=[
-"¿Con qué frecuencia postergás el inicio de tu proyecto porque sentís que todavía te falta confianza, experiencia o seguridad para hacerlo?",
-"¿Con qué frecuencia te preocupa que pase otro año y tu proyecto siga exactamente en el mismo lugar?",
-"¿Con qué frecuencia te prometés que esta vez vas a avanzar, volvés a postergarlo y terminás enojada o decepcionada con vos misma?",
-"¿Con qué frecuencia haces más cursos, planificas y ves reels en redes pero no accionas en tu proyecto?",
-"¿Con qué frecuencia dejás de mostrar tus ideas o dar pasos importantes por miedo a que otras personas te juzguen o te critiquen?",
-"¿Con qué frecuencia postergás una decisión porque necesitás tener la seguridad/certeza de que va a salir bien?",
-"¿Con qué frecuencia te angustia sentir que se te esta pasando el tiempo, sabiendo que lo tenes todo para crear la vida que soñas?"];
+"¿Con qué frecuencia piensas en tu proyecto sin dar un paso concreto hacia él?",
+"¿Cuánto te afecta emocionalmente pensar que sigue postergado?",
+"¿Con qué frecuencia sientes culpa, frustración o bronca contigo misma por no haber avanzado antes?",
+"¿Cuántas veces pospones empezar porque sientes que todavía no estás lista, no tienes todo claro o faltan condiciones ideales?",
+"¿Con qué frecuencia buscas más información, cursos, consejos o “preparación” antes de actuar?",
+"¿Cuánto te preocupa lo que pensarán, dirán o verán los demás si finalmente te muestras y lo intentas?",
+"¿Con qué frecuencia sientes que una parte importante de ti quedó en pausa mientras tu proyecto sigue siendo solo una idea?"];
 const O=["Casi nunca","A veces","Frecuentemente","Casi siempre"];
 const P=["sin apuro","vas bien","ya avanzaste","¡ya pasaste la mitad!","falta poco","casi llegas","tu resultado viene después de esta"];
-const H=["Respondé sin pensarlo.","Confiá en tu impulso.","Respondé desde lo que sentís.","No busques la perfección.","Sentí y respondé.","Sé honesta con vos.","Confiá en tu impulso."];
+const H=["Elige la opción que mejor describa tu momento actual. Aquí no hay respuestas correctas.","Notar lo que sientes es parte del proceso, no una debilidad.","La culpa suele aparecer porque ese proyecto sí importa.","Esperar el momento perfecto es una de las formas más comunes de postergar.","Prepararse se siente productivo; a veces también es una forma de esperar.","El miedo al juicio es humano: casi todas las personas lo sienten al mostrarse.","Responde con lo primero que sientas."];
 const L=[
-{max:12,name:"Tu proyecto sigue esperando",
- p:["Tu proyecto puede estar en una etapa de espera, todavía no parece estar generando un costo emocional profundo.","Puede que necesites claridad sobre el siguiente paso, una estructura más concreta o una decisión que lleves tiempo evitando."],
- q:"¿Cuánto más vas a esperar para darle a tu sueño el lugar que tanto decís que querés que tenga?"},
-{max:19,name:"Postergar te está costando más de lo que creés",
- p:["Ya no es solo una idea pendiente: empieza a afectar en cómo te percibis y en tu autoconfianza.","Probablemente alternas entre entusiasmo, culpa, sobrepensamiento y autocrítica. Puede que sientas que sabes qué hacer, pero el juicio ajeno todavia te frena a la hora de accionar y otra vez volves a la misma zona de confort."],
- q:"¿Qué estás creyendo sobre vos que te hace sentir que todavía no podés?"},
+{max:12,name:"Postergación puntual",
+ p:["Tu proyecto puede estar en una etapa de espera, pero todavía no parece estar generando un costo emocional profundo.","Puede que necesites claridad sobre el siguiente paso, una estructura más concreta o una decisión que lleves tiempo evitando."],
+ q:"¿Qué tendría que pasar para que este proyecto deje de ser “algún día” y pase a tener un lugar real en tu vida?"},
+{max:19,name:"Postergación con costo emocional",
+ p:["Ya no es solo una idea pendiente: empieza a afectar cómo te ves y cómo te sientes.","Probablemente alternas entre entusiasmo, culpa, sobrepensamiento y autocrítica. Puede que sientas que sabes qué hacer, pero algo interno te devuelve una y otra vez al mismo punto."],
+ q:"¿Qué creencia sobre ti misma aparece justo antes de postergar?"},
 {max:28,name:"El costo invisible es alto",
- p:["Ya no es tu proyecto lo que postergás, es tu vida la que, sin darte cuenta, está en pausa. Y está tan naturalizado que ya no lo podés ver.","Y ojo, no es que no seas capaz. Te sobra potencial y conocimiento. Pero todas esas horas de cursos, libros y contenido sobre desarrollo personal necesitan llevarse a la accion.","Todavía hay creencias, miedos y patrones que repetís sin darte cuenta. Y aunque quieras cambiar, seguís intentando hacerlo desde el mismo lugar que te trajo hasta acá."],
- q:"¿Qué miedo estás dejando que decida por vos?"}];
+ p:["Tu postergación ya no es solo una cuestión de tiempo o productividad. Está impactando tu confianza, tu energía emocional, tu sentido de posibilidad y quizás la manera en que te reconoces a ti misma.","No es que no seas capaz.","Es probable que estés operando desde creencias, estándares, miedos o patrones que convierten cada intento de avanzar en una experiencia exigente, expuesta o insegura."],
+ q:"¿Qué significaría sobre ti si finalmente lo intentas y no sale como esperabas?"}];
 const $=id=>document.getElementById(id);
 let i=0,ans=[],lock=false,proj='';
 const ab=p=>{$(p).hidden=!proj;$(p+'n').textContent="«"+proj+"»"};
@@ -208,7 +215,7 @@ function renderQ(){
 function result(){
   const s=ans.reduce((a,b)=>a+b,0),lv=L.find(l=>s<=l.max);
   $('score').textContent=s;
-  $('lvname').textContent=lv.name;
+  $('lvname').innerHTML='<span class="hl">'+lv.name+'</span>';
   $('lvtext').innerHTML=lv.p.map(t=>'<p>'+t+'</p>').join('');
   $('lvq').textContent=lv.q;
   ab('ab2');
