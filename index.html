@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="color-scheme" content="light">
-<title>Calculá el costo oculto de postergar tu idea un año más</title>
+<title>Calculá cuánto te cuesta dejar tu idea para después un año más</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -98,16 +98,16 @@ li::before{content:"–";position:absolute;left:0;color:var(--btn);font-weight:6
 <main class="wrap">
 
 <section class="screen glass" id="intro">
-  <h1 tabindex="-1">Calculá el Costo Oculto de postergar tu idea un año más</h1>
+  <h1 tabindex="-1">Calculá cuánto te cuesta dejar tu idea para después un año más</h1>
   <div class="squig" aria-hidden="true"></div>
   <p class="lead">Hay algo que querés hacer.</p>
-  <p>Puede ser empezar un proyecto, cambiar de trabajo, emprender o animarte a algo que venís pensando hace tiempo.</p>
-  <p>Pero entre las cosas que tenés que hacer, las dudas y el momento ideal que nunca termina de llegar, ¿cuánto espacio le estás dando realmente?</p>
-  <p>Respondé estas 7 preguntas y descubrí qué podría estar costándote seguir dejándolo para después.</p>
-  <label class="field" for="proj">¿Qué idea te gustaría poner en marcha? <span>(opcional)</span></label>
+  <p>Puede ser empezar un proyecto, cambiar de trabajo, tener tu propio negocio o animarte a hacer algo que pensás hace tiempo.</p>
+  <p>Pero entre tus tareas, las dudas y la espera del momento ideal, ¿cuánto lugar le estás dando a esa idea?</p>
+  <p>Respondé estas 7 preguntas y descubrí qué podrías estar perdiendo por seguir dejando esa idea para después.</p>
+  <label class="field" for="proj">¿Qué idea te gustaría empezar? <span>(opcional)</span></label>
   <input id="proj" maxlength="40" autocomplete="off" placeholder="Ej: Emprender, cambiar de trabajo, escribir mi libro…">
   <button class="btn" id="start" type="button">Calcular mi costo oculto</button>
-  <p class="meta">Respondé con sinceridad. No hay respuestas correctas o incorrectas.</p>
+  <p class="meta">Respondé con sinceridad. No hay respuestas buenas ni malas.</p>
 </section>
 
 <section class="screen glass" id="quiz" hidden>
@@ -121,8 +121,8 @@ li::before{content:"–";position:absolute;left:0;color:var(--btn);font-weight:6
 </section>
 
 <section class="screen glass" id="calc" hidden>
-  <h2 id="calch" tabindex="-1">Leyendo tus respuestas<span class="dots"></span></h2>
-  <p class="hint" style="margin-top:1rem">Pensando en tu mensaje de claridad.</p>
+  <h2 id="calch" tabindex="-1">Revisando tus respuestas<span class="dots"></span></h2>
+  <p class="hint" style="margin-top:1rem">Preparando tu resultado.</p>
 </section>
 
 <section class="screen glass" id="res" hidden>
@@ -131,7 +131,7 @@ li::before{content:"–";position:absolute;left:0;color:var(--btn);font-weight:6
   <p class="score"><b id="score"></b> de 28</p>
   <h2 id="lvname" tabindex="-1"></h2>
   <div id="lvtext" style="margin-top:1.2rem"></div>
-  <div class="pull"><p class="k">Pregunta para reflexionar</p><p class="q" id="lvq"></p></div>
+  <div class="pull"><p class="k">Una pregunta para pensar</p><p class="q" id="lvq"></p></div>
 
   <div class="scale" aria-hidden="true">
     <div class="ruler"><i class="ring" id="mark"></i></div>
@@ -139,97 +139,97 @@ li::before{content:"–";position:absolute;left:0;color:var(--btn);font-weight:6
   </div>
 
   <hr>
-  <h3>Una mirada más profunda</h3>
-  <p>El objetivo no es ponerte una etiqueta. Es que puedas mirar lo que te está pasando con más claridad:</p>
+  <h3>Miremos un poco más</h3>
+  <p>La idea no es ponerte una etiqueta. Es ayudarte a entender mejor qué te está pasando:</p>
   <ul>
-    <li>No siempre dejás algo para después por pereza.</li>
-    <li>No siempre necesitás más información.</li>
-    <li>No siempre es falta de tiempo.</li>
-    <li>No siempre es falta de disciplina.</li>
+    <li>No siempre dejás algo para después porque te dé fiaca.</li>
+    <li>No siempre necesitás aprender más.</li>
+    <li>No siempre es porque te falta tiempo.</li>
+    <li>No siempre es porque te falta disciplina.</li>
   </ul>
-  <p>A veces postergar es una forma de protegerte:</p>
+  <p>A veces dejás algo para después para protegerte de:</p>
   <ul>
     <li>Del fracaso.</li>
-    <li>Del juicio ajeno.</li>
+    <li>Lo que puedan pensar los demás.</li>
     <li>De equivocarte.</li>
-    <li>De descubrir que no sos capaz.</li>
-    <li>De exponerte y sentir miedo al éxito.</li>
-    <li>De perder una versión idealizada del proyecto.</li>
+    <li>Descubrir que quizás no podés hacerlo.</li>
+    <li>Mostrarte y tener miedo de que te vaya bien.</li>
+    <li>De que tu proyecto no sea tan perfecto como lo imaginabas.</li>
   </ul>
-  <p>Por eso saber qué hacer no siempre alcanza.</p>
+  <p>Por eso, saber qué hacer no siempre es suficiente.</p>
 
   <hr>
   <div class="final">
-    <p>El costo invisible de postergar no es solo el tiempo que pasa.</p>
-    <p>Es la energía que gastás pensando en lo mismo.</p>
-    <p>Es la confianza que se desgasta cuando volvés a prometerte algo y no lo cumplís.</p>
-    <p><span class="hl">Es la parte de ti que queda esperando.</span></p>
-    <p>Es la vida que sabés que querés vivir, pero que puede seguir esperando.</p>
-    <p class="sm" style="margin-top:1.6rem">La buena noticia es que la vara que construiste para darle sentido a lo que te pasa... podés cuestionarla y construir una nueva. A veces, necesitás aprender a mirarte de una manera diferente.</p>
+    <p>Dejar algo para después no solo te hace perder tiempo.</p>
+    <p>También gastás energía al pensar una y otra vez en lo mismo.</p>
+    <p>Y podés perder confianza en vos cuando te prometés que vas a hacerlo, pero no lo hacés.</p>
+    <p><span class="hl">Es una parte de vos que sigue esperando.</span></p>
+    <p>Es la vida que querés vivir y que seguís dejando para después.</p>
+    <p class="sm" style="margin-top:1.6rem">La buena noticia es que podés revisar la forma en que entendés lo que te pasa y cambiarla. A veces, necesitás aprender a mirarte de otra manera.</p>
   </div>
 
   <div class="cta">
     <div class="squig" aria-hidden="true"></div>
-    <h3>¿Querés entender <em>qué te frena</em> realmente?</h3>
-    <p>Reservá una Sesión de Claridad Gratuita para explorar qué puede estar frenándote y qué necesitás comprender para dar el siguiente paso.</p>
+    <h3>¿Querés entender <em>qué te está frenando</em>?</h3>
+    <p>Reservá una Sesión de Claridad Gratuita. Vamos a mirar qué te frena y qué necesitás entender para dar el siguiente paso.</p>
     <a class="btn" id="cta" href="https://calendly.com/reserva-sesiones-coaching/meet" target="_blank" rel="noopener">Reservar mi Sesión de Claridad Gratuita <span class="sr">(se abre en una pestaña nueva)</span></a>
   </div>
 
-  <p style="margin-top:2rem"><button class="link" id="again" type="button">Volver a hacer el cuestionario</button></p>
+  <p style="margin-top:2rem"><button class="link" id="again" type="button">Hacer el cuestionario otra vez</button></p>
 </section>
 
 </main>
 <script>
 const Q=[
- {text:"¿Hace cuánto tenés esa idea dando vueltas en la cabeza?",hint:"Pensá en esa idea que te gustaría poner en marcha.",options:[
+ {text:"¿Hace cuánto tiempo tenés esa idea en la cabeza?",hint:"Pensá en esa idea que te gustaría empezar.",options:[
   {text:"Hace menos de 3 meses.",score:1},
   {text:"Entre 3 y 6 meses.",score:2},
   {text:"Entre 6 meses y 1 año.",score:3},
   {text:"Hace más de 1 año.",score:4}]},
- {text:"Si mirás lo que hiciste hasta hoy, ¿cuánto avanzaste realmente con esa idea?",hint:"No cuentes solamente lo que pensaste o planificaste: mirá lo que hiciste.",options:[
-  {text:"Ya di varios pasos concretos.",score:1},
+ {text:"Hasta hoy, ¿cuánto avanzaste con esa idea?",hint:"No cuentes solo lo que pensaste o planeaste. Pensá en lo que hiciste.",options:[
+  {text:"Ya hice varias cosas para empezar.",score:1},
   {text:"Empecé, pero avancé menos de lo que quería.",score:2},
-  {text:"Hice planes y me preparé, pero avancé poco.",score:3},
-  {text:"Todavía no logré ponerla en marcha.",score:4}]},
- {text:"¿Cuántas veces pensaste «ahora sí, este es el momento» y después terminaste dejando la idea para más adelante?",hint:"Respondé pensando en lo que efectivamente pasó.",options:[
-  {text:"Nunca, suelo avanzar cuando me lo propongo.",score:1},
+  {text:"Hice planes y me preparé, pero hice poco.",score:3},
+  {text:"Todavía no empecé.",score:4}]},
+ {text:"¿Cuántas veces pensaste «ahora sí, es el momento» y después dejaste la idea para más adelante?",hint:"Pensá en lo que pasó de verdad.",options:[
+  {text:"Nunca. Suelo avanzar cuando me lo propongo.",score:1},
   {text:"Una o dos veces.",score:2},
   {text:"Varias veces.",score:3},
   {text:"Ya perdí la cuenta.",score:4}]},
- {text:"Aunque no estés trabajando en esa idea, ¿cada cuánto vuelve a tu cabeza y te hace pensar en todo lo que todavía tenés pendiente?",hint:"Pensá cuánto espacio ocupa esa idea en tu día a día.",options:[
-  {text:"Casi nunca, no me preocupa.",score:1},
+ {text:"Aunque no estés trabajando en esa idea, ¿cada cuánto volvés a pensar en ella y en todo lo que te falta hacer?",hint:"Pensá cuánto lugar ocupa esa idea en tu vida diaria.",options:[
+  {text:"Casi nunca. No me preocupa.",score:1},
   {text:"De vez en cuando.",score:2},
   {text:"Varias veces por semana.",score:3},
   {text:"Casi todos los días.",score:4}]},
- {text:"Cuando te das cuenta de que pasó otro mes y seguís en el mismo lugar, ¿qué te pasa?",hint:"No hay una respuesta correcta. Elegí la que más se acerque a lo que sentís.",options:[
-  {text:"No me preocupa demasiado; todavía estoy definiendo mis tiempos.",score:1},
+ {text:"Cuando pasa otro mes y seguís en el mismo lugar, ¿cómo te sentís?",hint:"No hay una respuesta correcta. Elegí la que más se parece a lo que sentís.",options:[
+  {text:"No me preocupa mucho. Todavía estoy viendo cuándo hacerlo.",score:1},
   {text:"Me frustra un poco.",score:2},
-  {text:"Me enojo conmigo porque siento que podría haber avanzado.",score:3},
-  {text:"Me cuesta confiar en que esta vez realmente voy a hacerlo.",score:4}]},
- {text:"Imaginá que dentro de un año tu idea sigue exactamente como hoy. ¿Qué sería lo más difícil de aceptar?",hint:"Imaginá que nada cambia de acá a un año.",options:[
-  {text:"No sería grave; podría retomarla más adelante.",score:1},
-  {text:"Haber perdido otro año para empezar.",score:2},
-  {text:"Seguir pensando en algo que quiero hacer sin concretarlo.",score:3},
-  {text:"Sentir que volví a fallarme a mí misma.",score:4}]},
- {text:"Si ya sabés que querés hacerlo, ¿qué sentís que hoy te impide dar el siguiente paso?",hint:"Elegí lo que más se acerque a lo que te pasa hoy.",options:[
-  {text:"Necesito más claridad para saber por dónde empezar.",score:2},
-  {text:"Necesito tiempo, recursos o una mejor organización.",score:1},
-  {text:"Me cuesta decidirme porque no tengo garantías de que salga bien.",score:3},
-  {text:"Me preocupa equivocarme, exponerme o lo que puedan pensar los demás.",score:4},
-  {text:"No termino de entender qué me pasa; sé que quiero hacerlo, pero algo me frena.",score:4}]}
+  {text:"Me enojo conmigo porque siento que podría haber hecho más.",score:3},
+  {text:"Me cuesta creer que esta vez sí lo voy a hacer.",score:4}]},
+ {text:"Imaginá que pasa un año y tu idea sigue igual que hoy. ¿Qué te costaría más aceptar?",hint:"Imaginá que dentro de un año todo sigue igual.",options:[
+  {text:"No sería grave. Podría retomarla más adelante.",score:1},
+  {text:"Haber dejado pasar otro año sin empezar.",score:2},
+  {text:"Seguir pensando en algo que quiero hacer, pero no hacerlo.",score:3},
+  {text:"Sentir que otra vez me fallé a mí misma.",score:4}]},
+ {text:"Si sabés que querés hacerlo, ¿qué te impide dar el siguiente paso?",hint:"Elegí la respuesta que más se parece a lo que te pasa hoy.",options:[
+  {text:"Necesito tener más claro por dónde empezar.",score:2},
+  {text:"Necesito más tiempo, recursos o estar mejor organizado.",score:1},
+  {text:"Me cuesta decidir porque no sé si va a salir bien.",score:3},
+  {text:"Me da miedo equivocarme, mostrarme o lo que puedan pensar los demás.",score:4},
+  {text:"No entiendo qué me pasa. Sé que quiero hacerlo, pero algo me frena.",score:4}]}
 ];
-const P=["Empecemos por el tiempo.","Mirá lo que hiciste hasta hoy.","Pensá en las veces que lo intentaste.","Observá cuánto espacio ocupa.","Registrá qué te pasa.","Imaginá un año más.","Elegí lo que más se acerca a tu situación."];
+const P=["Primero, pensemos en el tiempo.","Mirá lo que hiciste hasta ahora.","Pensá cuántas veces lo intentaste.","Mirá cuánto lugar ocupa esa idea.","Fijate cómo te sentís.","Imaginá que pasa un año más.","Elegí la respuesta más parecida a tu situación."];
 const H=Q.map(q=>q.hint);
 const L=[
  {max:12,name:"Todavía estás a tiempo de elegir",
-  p:["Por tus respuestas, esta idea no parece estar ocupando un costo emocional alto en este momento, o todavía estás en una etapa inicial.","Aun así, puede servirte distinguir entre estar eligiendo conscientemente esperar y seguir esperando sin decidirlo."],
-  q:"¿Estás eligiendo dejar esta idea para más adelante o simplemente todavía no encontraste la manera de empezar?"},
+  p:["Por tus respuestas, esta idea no parece preocuparte demasiado por ahora. También puede ser que recién estés empezando.","Aun así, es útil ver la diferencia entre elegir esperar y seguir esperando sin tomar una decisión."],
+  q:"¿Elegís dejar esta idea para más adelante o todavía no encontraste cómo empezar?"},
  {max:19,name:"Tu idea está ocupando más espacio del que parece",
-  p:["Tus respuestas sugieren que la distancia entre lo que querés hacer y lo que efectivamente hiciste empieza a pesarte.","Quizás la idea vuelve una y otra vez, te frustrás por no avanzar o te preparás sin llegar al paso que querés dar. Vale la pena mirar qué está pasando en ese recorrido."],
-  q:"¿Qué se repite cada vez que decidís que ahora sí vas a avanzar?"},
+  p:["Tus respuestas muestran que empieza a pesarte la diferencia entre lo que querés hacer y lo que hiciste hasta ahora.","Quizás pensás mucho en esa idea, te frustrás porque no avanzás o te preparás, pero no das el paso que querés dar. Vale la pena entender qué pasa cada vez."],
+  q:"¿Qué pasa una y otra vez cuando decidís que ahora sí vas a avanzar?"},
  {max:28,name:"El costo de seguir igual merece tu atención",
-  p:["Tus respuestas muestran que esta idea lleva tiempo esperando, ocupa espacio en tu cabeza o está empezando a afectar cómo te sentís con vos misma.","No significa que haya algo mal en vos. Pero si el mismo ciclo se repite, quizá no alcance con organizarte mejor o esperar a sentirte lista: puede ser importante comprender qué te frena cuando llega el momento de actuar."],
-  q:"Si ya sabés que querés hacerlo, ¿qué necesitás comprender para dejar de repetir el mismo ciclo?"}];
+  p:["Tus respuestas muestran que hace tiempo dejás esta idea para después, que pensás mucho en ella o que empieza a afectar cómo te sentís con vos misma.","Eso no significa que haya algo mal en vos. Pero si esto se repite, quizás no alcance con organizarte mejor o esperar a estar lista. Puede ayudarte entender qué te frena cuando llega el momento de actuar."],
+  q:"Si sabés que querés hacerlo, ¿qué necesitás entender para dejar de repetir lo mismo?"}];
 const $=id=>document.getElementById(id);
 let i=0,ans=[],chosen=[],lock=false,proj='';
 const ab=p=>{$(p).hidden=!proj;$(p+'n').textContent="«"+proj+"»"};
